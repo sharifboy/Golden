@@ -9,6 +9,7 @@ import DiscountSale from "./pages/DiscountSale";
 import Order from "./pages/Order";
 import PageNotFound from "./pages/PageNotFound";
 import Product from "./pages/Product";
+import Favourite from "./pages/Favourite";
 
 function App() {
     return (
@@ -22,7 +23,8 @@ function App() {
                 <Route path='/delivery' element={<Delivery />} />
                 <Route path='/discount' element={<DiscountSale />} />
                 <Route path='/order' element={<Order />} />
-                <Route path='/Product' element={<Product />} />
+                <Route path='/product' element={<Product />} />
+                <Route path='/favourite' element={<Favourite />} />
                 <Route path='*' element={<PageNotFound />} />
             </Routes>
         </BrowserRouter>

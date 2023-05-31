@@ -16,4 +16,4 @@ const colors = {
     light,
 };
 
-export { colors };
+export default colors;

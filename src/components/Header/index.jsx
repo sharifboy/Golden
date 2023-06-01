@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import BurgerMenu from "./BurgerMenu";
 import HeaderTop from "./HeaderTop";
 import { Container } from "../Container/style";
 import * as Style from "./style";
@@ -8,15 +9,26 @@ import { CartIcon, LogoIcon, PhoneLogo } from "../../assets/images/svgIcons";
 import like from "../../assets/images/like.png";
 
 const Header = () => {
+    const [burger, setBurger] = useState(false);
+
+    const handleClick = () => {
+        setBurger(!burger);
+    };
+
     return (
         <Style.HeaderWrapper>
             <HeaderTop />
             <Style.HeaderNavbar>
                 <Container>
                     <Style.HeaderNavContent>
-                        <Link to='/'>
+                        <Style.BurgerMenuContent onClick={() => handleClick()}>
+                            <Style.BurgerMenuRows />
+                            <Style.BurgerMenuRows />
+                            <Style.BurgerMenuRows />
+                        </Style.BurgerMenuContent>
+                        <Style.LogoLink to='/'>
                             <LogoIcon />
-                        </Link>
+                        </Style.LogoLink>
                         <Style.HeaderNavLinkList>
                             <Style.NavLink to='/'>Главная</Style.NavLink>
                             <Style.NavLink to='/'>Каталог</Style.NavLink>
@@ -41,6 +53,7 @@ const Header = () => {
                         </Style.UserActions>
                     </Style.HeaderNavContent>
                 </Container>
+                <BurgerMenu open={burger} handleClick={handleClick} />
             </Style.HeaderNavbar>
         </Style.HeaderWrapper>
     );

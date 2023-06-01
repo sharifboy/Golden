@@ -1,6 +1,7 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import { Colors, Flex } from "../../utils";
+import { adaptiveValue } from "../../utils/variable";
 
 const HeaderWrapper = styled.header`
     width: 100%;
@@ -10,43 +11,78 @@ const HeaderNavbar = styled.div`
     width: 100%;
     padding-block: 20px;
     background: ${Colors.light};
-    box-shadow: inset 0px -1px 0px #c4cdd5;
+    box-shadow: inset 0px -1px 0px ${Colors.borderColor};
+    position: relative;
+    z-index: 100;
+`;
+
+const LogoLink = styled(Link)`
+    @media (max-width: 768px) {
+        display: none;
+    }
 `;
 
 const HeaderNavContent = styled.div`
     ${Flex.spaceBetween}
-    gap: 100px;
 `;
 
 const HeaderNavLinkList = styled.nav`
     ${Flex.spaceBetween}
-    gap: 32px;
+    ${adaptiveValue("gap", 32, 15)}
+
+    @media (max-width: 768px) {
+        display: none;
+    }
 `;
 
 const NavLink = styled(Link)`
     font-weight: 300;
-    font-size: 20px;
+    ${adaptiveValue("font-size", 20, 14)}
     line-height: 24px;
     color: ${Colors.dark};
 `;
 
 const UserActions = styled.div`
     ${Flex.alignCenter}
-    gap: 30px;
+    ${adaptiveValue("gap", 30, 15)}
 `;
 
 const PhoneContent = styled.a`
     ${Flex.alignCenter};
     gap: 8px;
     font-weight: 400;
-    font-size: 18px;
+    ${adaptiveValue("font-size", 18, 14)}
     line-height: 21px;
     color: ${Colors.gray};
+
+    @media (max-width: 768px) {
+        display: none;
+    }
 `;
 
 const ActionBox = styled.div`
     ${Flex.alignCenter}
-    gap: 24px;
+    ${adaptiveValue("gap", 24, 16)}
+`;
+
+const BurgerMenuContent = styled.div`
+    width: 24px;
+    height: 24px;
+    flex-direction: column;
+    gap: 6px;
+    padding-block: 2px;
+    display: none;
+
+    @media (max-width: 768px) {
+        ${Flex.spaceBetween};
+    }
+`;
+
+const BurgerMenuRows = styled.span`
+    width: 100%;
+    height: 3px;
+    border-radius: 2px;
+    background: ${Colors.dark};
 `;
 
 export {
@@ -58,4 +94,7 @@ export {
     UserActions,
     PhoneContent,
     ActionBox,
+    LogoLink,
+    BurgerMenuContent,
+    BurgerMenuRows,
 };

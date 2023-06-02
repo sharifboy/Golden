@@ -10,7 +10,9 @@ export const GlobalStyles = createGlobalStyle`
         text-decoration: none;
     }
 
-    body {
-        font-family: Roboto, sanf-serif;
+    main {
+        height: 80vh;
     }
+
+    
 `;

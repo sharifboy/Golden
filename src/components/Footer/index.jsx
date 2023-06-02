@@ -1,9 +1,33 @@
-import React from 'react'
+import React from "react";
+import * as S from "./style";
+import { Link } from "react-router-dom";
+import { LogoIcon } from "../../assets/images/svgIcons";
+import { socialMediaData } from "./data";
+import { Container } from "../Container/style";
 
 const Footer = () => {
-  return (
-    <div>Footer</div>
-  )
-}
+    return (
+        <S.FooterWrapper>
+            <Container>
+                <S.FooterContent>
+                    <Link to='/'>
+                        <LogoIcon color='#fff' />
+                    </Link>
+                    <S.SocialMediaLinks>
+                        {socialMediaData.map((el) => (
+                            <S.MediaLink key={el.id} href={el.href}>
+                                {el.icon}
+                            </S.MediaLink>
+                        ))}
+                    </S.SocialMediaLinks>
+                </S.FooterContent>
+                <S.FooterBottom>
+                    © {new Date().getFullYear()} Golden Soft All rights
+                    reserved.
+                </S.FooterBottom>
+            </Container>
+        </S.FooterWrapper>
+    );
+};
 
-export default Footer
+export default Footer;

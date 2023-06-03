@@ -80,6 +80,27 @@ const DiscountText = styled.p`
     color: ${Colors.borderColor};
 `;
 
+const SwiperNavigation = styled.div`
+    width: 180px;
+    margin-inline: auto;
+    ${adaptiveValue("margin-top", 50, 32)}
+    ${adaptiveValue("margin-bottom", 48, 40)}
+    ${Flex.center}
+    gap: 10px;
+
+    @media (max-width: 576px) {
+        width: 100%;
+        justify-content: space-between;
+    }
+`;
+
+const SwiperNavBtn = styled.button`
+    background-color: transparent;
+    display: block;
+    width: 24px;
+    height: 24px;
+`;
+
 export {
     BannerWrapper,
     SwiperItems,
@@ -91,4 +112,6 @@ export {
     PriceBadge,
     MainPriceText,
     DiscountText,
+    SwiperNavigation,
+    SwiperNavBtn,
 };

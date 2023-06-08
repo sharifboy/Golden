@@ -1,16 +1,17 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper } from "swiper/react";
+import { Navigation } from "swiper";
+import { breakpoints, popularProductData } from "./data";
 import { Container } from "../Container/style";
+import { SwiperNavBtn } from "../Banner/style";
 import { Title } from "../WhyUs/style";
 import * as S from "./style";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Navigation } from "swiper";
-import { SwiperNavBtn, SwiperNavigation } from "../Banner/style";
+
 import { ArrowIcon } from "../../assets/images/svgIcons";
-import { popularProductData } from "./data";
 
 const PopularProducts = () => {
     const useSwiperRef = () => {
@@ -51,20 +52,7 @@ const PopularProducts = () => {
                         prevEl,
                         nextEl,
                     }}
-                    breakpoints={{
-                        300: {
-                            slidesPerView: 1,
-                        },
-                        460: {
-                            slidesPerView: 2,
-                        },
-                        620: {
-                            slidesPerView: 3,
-                        },
-                        770: {
-                            slidesPerView: 4,
-                        },
-                    }}
+                    breakpoints={breakpoints}
                     modules={[Navigation]}
                     className='mySwiper'
                 >

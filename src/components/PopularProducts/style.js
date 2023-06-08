@@ -23,7 +23,8 @@ const PopularSwiperNavigation = styled(SwiperNavigation)`
 const ProductCard = styled(SwiperSlide)`
     position: relative;
     color: ${Colors.lightGray};
-    display: block;
+    ${Flex.flexBetween}
+    flex-direction: column;
     box-shadow: inset 0px -1px 0px #eaeaea, inset 1px 0px 0px #eaeaea,
         inset -1px 0px 0px #eaeaea;
 `;

@@ -1,15 +1,15 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import AboutUs from "./pages/AboutUs";
-import Cart from "./pages/Cart";
-import Catalog from "./pages/Catalog";
-import Category from "./pages/Category";
-import Delivery from "./pages/Delivery";
-import DiscountSale from "./pages/DiscountSale";
-import Order from "./pages/Order";
-import PageNotFound from "./pages/PageNotFound";
-import Product from "./pages/Product";
-import Favourite from "./pages/Favourite";
+import Home from "pages/Home";
+import AboutUs from "pages/AboutUs";
+import Cart from "pages/Cart";
+import Catalog from "pages/Catalog";
+import Category from "pages/Category";
+import Delivery from "pages/Delivery";
+import DiscountSale from "pages/DiscountSale";
+import Order from "pages/Order";
+import PageNotFound from "pages/PageNotFound";
+import Product from "pages/Product";
+import Favourite from "pages/Favourite";
 
 function App() {
     return (

@@ -1,0 +1,38 @@
+[
+    {
+        "id": "0",
+        "inCash": true,
+        "name": "Дверной Замок Golden Soft для отеля",
+        "currentPrice": "33 000₽",
+        "oldPrice": "37 000₽",
+        "category": "Замки для дома",
+        "image": "https://www.ozonehardware.com/pd/digital-door-locks/4-in-1-access-digital-door-lock/ozdl-4wa=std"
+    },
+    {
+        "id": "1",
+        "inCash": false,
+        "name": "Вариативный замок Golden Soft для отеля",
+        "currentPrice": "7 000₽",
+        "oldPrice": "8 000₽",
+        "category": "Замки для дома",
+        "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRWMD-RBHXDv45hA2v3hXqEfWlHEQqvsInyF9GCeRceL0BjHT9P"
+    },
+    {
+        "id": "2",
+        "inCash": false,
+        "name": "Дверной Замок Golden Soft для офиса",
+        "currentPrice": "33 000₽",
+        "oldPrice": "39 000₽",
+        "category": "Замки для дома",
+        "image": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSiIXQUelH-OLnU0-6GISYAfZ1EFEESsExQQNu07ZPrANG_uG1P"
+    },
+    {
+        "id": "3",
+        "inCash": false,
+        "name": "Дверной Замок Golden Soft для офиса",
+        "currentPrice": "9 000₽",
+        "oldPrice": "12 000₽",
+        "category": "Замки для дома",
+        "image": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSTB_uyjXwkWciWfYjULb0BE-497uvyL4k7X79CbpkII8goNonM"
+    }
+]

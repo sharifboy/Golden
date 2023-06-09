@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Swiper } from "swiper/react";
+import axios from "axios";
 import { Navigation, Autoplay } from "swiper";
-import { breakpoints, popularProductData } from "./data";
+import { breakpoints } from "./data";
 import { Container } from "components/Container/style";
 import { SwiperNavBtn } from "components/Banner/style";
 import { Title } from "components/WhyUs/style";
@@ -14,6 +15,15 @@ import "swiper/css/pagination";
 import { ArrowIcon } from "assets/images/svgIcons";
 
 const PopularProducts = () => {
+    const [data, setData] = useState([]);
+
+    async function getData() {
+        const res = await axios.get(`${process.env.REACT_APP_MAIN_URL}`);
+        if (res.status == 200) {
+            setData(res.data);
+        }
+    }
+
     const useSwiperRef = () => {
         const [wrapper, setWrapper] = useState(null);
         const ref = useRef(null);
@@ -29,6 +39,12 @@ const PopularProducts = () => {
 
     const [nextEl, nextElRef] = useSwiperRef();
     const [prevEl, prevElRef] = useSwiperRef();
+
+    useEffect(() => {
+        getData();
+    }, []);
+
+    console.log(data);
     return (
         <S.PopularWrapper>
             <Container>
@@ -58,7 +74,7 @@ const PopularProducts = () => {
                     modules={[Navigation, Autoplay]}
                     className='mySwiper'
                 >
-                    {popularProductData.map((el) => (
+                    {data?.map((el) => (
                         <S.ProductCard key={el.id}>
                             <S.ProductImageLink to='/'>
                                 <S.InCashTextBox>
@@ -72,9 +88,9 @@ const PopularProducts = () => {
                                 <S.ProductImage src={el.image} />
                             </S.ProductImageLink>
                             <S.ProductCardInfo>
-                                <S.InfoTitle>{el.title}</S.InfoTitle>
+                                <S.InfoTitle>{el.name}</S.InfoTitle>
                                 <S.PriceBoard>
-                                    <S.MainPrice>{el.main_price}</S.MainPrice>
+                                    <S.MainPrice>{el.currentPrice}</S.MainPrice>
                                     <S.OldPrice>{el.oldPrice}</S.OldPrice>
                                 </S.PriceBoard>
                             </S.ProductCardInfo>

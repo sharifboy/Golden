@@ -25,22 +25,25 @@ const PopularSwiperNavigation = styled(SwiperNavigation)`
 `;
 
 const ProductCard = styled(SwiperSlide)`
+    max-width: 288px;
+    width: 100%;
     position: relative;
     color: ${Colors.lightGray};
     ${Flex.flexBetween}
     flex-direction: column;
-    box-shadow: inset 0px -1px 0px #eaeaea, inset 1px 0px 0px #eaeaea,
-        inset -1px 0px 0px #eaeaea;
+    border: 1px solid ${Colors.borderColor};
 `;
 
 const ProductImageLink = styled(Link)`
     width: 100%;
     overflow: hidden;
+    height: 320px;
 `;
 
 const ProductCardInfo = styled.div`
     padding: 10px 12px;
     text-align: left;
+    background-color: ${Colors.lightGray};
 `;
 
 const InfoTitle = styled.h3`
@@ -94,8 +97,11 @@ const InCashTextBox = styled.div`
 `;
 
 const ProductImage = styled.img`
-    width: 100%;
-    object-fit: cover;
+    width: 200px !important;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
 `;
 
 const CashText = styled.span`

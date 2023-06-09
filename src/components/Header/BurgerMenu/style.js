@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { Colors, Flex } from "../../../utils";
+import { Colors, Flex } from "utils";
 import { NavLink } from "../style";
-import { adaptiveValue } from "../../../utils/variable";
+import { adaptiveValue } from "utils/variable";
 
 const BurgerMenuWrapper = styled.div`
     position: fixed;
@@ -17,6 +17,7 @@ const BurgerMenuWrapper = styled.div`
     padding: 24px 16px 40px;
     ${Flex.spaceBetween};
     flex-direction: column;
+    background-color: ${Colors.light};
 `;
 
 const BurgerMenuNav = styled.nav`

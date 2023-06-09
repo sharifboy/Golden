@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { adaptiveValue } from "../../utils/variable";
-import { Colors, Flex } from "../../utils";
+import { adaptiveValue } from "utils/variable";
+import { Colors, Flex } from "utils";
 import { SwiperNavigation } from "../Banner/style";
 import { SwiperSlide } from "swiper/react";
 import { Link } from "react-router-dom";
@@ -18,6 +18,10 @@ const PopularHeader = styled.div`
 
 const PopularSwiperNavigation = styled(SwiperNavigation)`
     margin-inline: inherit;
+
+    @media (max-width: 620px) {
+        display: none;
+    }
 `;
 
 const ProductCard = styled(SwiperSlide)`
@@ -31,7 +35,7 @@ const ProductCard = styled(SwiperSlide)`
 
 const ProductImageLink = styled(Link)`
     width: 100%;
-    max-height: 320px;
+    overflow: hidden;
 `;
 
 const ProductCardInfo = styled.div`
@@ -89,6 +93,11 @@ const InCashTextBox = styled.div`
     padding-inline: 5px;
 `;
 
+const ProductImage = styled.img`
+    width: 100%;
+    object-fit: cover;
+`;
+
 const CashText = styled.span`
     font-size: 14px;
     line-height: 24px;
@@ -109,4 +118,5 @@ export {
     SaleBox,
     CashText,
     InCashTextBox,
+    ProductImage,
 };

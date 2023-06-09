@@ -1,4 +1,4 @@
-import image from "../../assets/images/Banner/image_1.png";
+import image from "assets/images/Banner/image_1.png";
 
 const categoryListData = [
     {

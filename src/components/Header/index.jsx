@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import BurgerMenu from "./BurgerMenu";
 import HeaderTop from "./HeaderTop";
-import { Container } from "../Container/style";
+import { Container } from "components/Container/style";
 import * as Style from "./style";
 
-import { CartIcon, LogoIcon, PhoneLogo } from "../../assets/images/svgIcons";
-import like from "../../assets/images/like.png";
+import { CartIcon, LogoIcon, PhoneLogo } from "assets/images/svgIcons";
+import like from "assets/images/like.png";
 
 const Header = () => {
     const [burger, setBurger] = useState(false);
@@ -14,6 +14,14 @@ const Header = () => {
     const handleClick = () => {
         setBurger(!burger);
     };
+
+    useEffect(() => {
+        if (burger) {
+            window.document.body.style.overflow = "hidden";
+        } else {
+            window.document.body.style.overflow = "auto";
+        }
+    });
 
     return (
         <Style.HeaderWrapper>

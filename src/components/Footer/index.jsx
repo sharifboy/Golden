@@ -1,9 +1,9 @@
 import React from "react";
-import * as S from "./style";
 import { Link } from "react-router-dom";
-import { LogoIcon } from "../../assets/images/svgIcons";
+import { LogoIcon } from "assets/images/svgIcons";
 import { socialMediaData } from "./data";
-import { Container } from "../Container/style";
+import { Container } from "components/Container/style";
+import * as S from "./style";
 
 const Footer = () => {
     return (

@@ -2,16 +2,16 @@ import React, { useEffect, useRef, useState } from "react";
 import { Swiper } from "swiper/react";
 import { Navigation } from "swiper";
 import { breakpoints, popularProductData } from "./data";
-import { Container } from "../Container/style";
-import { SwiperNavBtn } from "../Banner/style";
-import { Title } from "../WhyUs/style";
+import { Container } from "components/Container/style";
+import { SwiperNavBtn } from "components/Banner/style";
+import { Title } from "components/WhyUs/style";
 import * as S from "./style";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import { ArrowIcon } from "../../assets/images/svgIcons";
+import { ArrowIcon } from "assets/images/svgIcons";
 
 const PopularProducts = () => {
     const useSwiperRef = () => {
@@ -67,7 +67,7 @@ const PopularProducts = () => {
                                     </S.CashText>
                                 </S.InCashTextBox>
                                 <S.SaleBox>Sale</S.SaleBox>
-                                <img src={el.image} />
+                                <S.ProductImage src={el.image} />
                             </S.ProductImageLink>
                             <S.ProductCardInfo>
                                 <S.InfoTitle>{el.title}</S.InfoTitle>

@@ -1,11 +1,11 @@
 import React from "react";
-import * as S from "./style";
-import { Container } from "../Container/style";
-import { Title } from "../WhyUs/style";
-import { ErrorMessage, Formik } from "formik";
 import * as Yup from "yup";
+import { Container } from "components/Container/style";
+import { Title } from "components/WhyUs/style";
+import { Formik } from "formik";
 import axios from "axios";
-import ErrorMessageHandler from "../ErrorMessageHander";
+import ErrorMessageHandler from "components/ErrorMessageHander";
+import * as S from "./style";
 
 const ContactForm = () => {
     const contactInitialValues = {
@@ -30,7 +30,6 @@ const ContactForm = () => {
         email: Yup.string().email("Invalid email").required(),
     });
 
-    
     return (
         <S.ContactFormWrapper>
             <Container>

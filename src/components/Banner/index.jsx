@@ -40,6 +40,7 @@ const Banner = () => {
                     pagination={{
                         el: ".pagination-bullets",
                         type: "bullets",
+                        clickable: true,
                     }}
                     mousewheel={true}
                     keyboard={true}

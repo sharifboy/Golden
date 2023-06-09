@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Swiper } from "swiper/react";
-import { Navigation } from "swiper";
+import { Navigation, Autoplay } from "swiper";
 import { breakpoints, popularProductData } from "./data";
 import { Container } from "components/Container/style";
 import { SwiperNavBtn } from "components/Banner/style";
@@ -52,8 +52,10 @@ const PopularProducts = () => {
                         prevEl,
                         nextEl,
                     }}
+                    autoplay={true}
+                    loop={true}
                     breakpoints={breakpoints}
-                    modules={[Navigation]}
+                    modules={[Navigation, Autoplay]}
                     className='mySwiper'
                 >
                     {popularProductData.map((el) => (

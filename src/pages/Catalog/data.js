@@ -11,16 +11,19 @@ const catalogListData = [
         id: 0,
         image: image_1,
         text: "Накладные электронные замки",
+        type: "forWork",
     },
     {
         id: 1,
         image: image_2,
         text: "Врезные электроные замки",
+        type: "forOffice",
     },
     {
         id: 2,
         image: image_3,
         text: "Замки для квартиры",
+        type: "forFlat",
     },
     {
         id: 3,

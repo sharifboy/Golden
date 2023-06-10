@@ -28,6 +28,7 @@ const Catalog = () => {
                                 key={el.id}
                                 image={el.image}
                                 text={el.text}
+                                type={el.type}
                             />
                         ))}
                     </S.CatalogList>

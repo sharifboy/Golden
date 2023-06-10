@@ -15,11 +15,11 @@ const CategoryList = () => {
                         <S.CategoryListItem key={el.id}>
                             <S.ListImage src={el.image} alt={el.title} />
                             <S.ListTitle>{el.title}</S.ListTitle>
-                            <S.ListLink to='/category'>Перейти</S.ListLink>
+                            <S.ListLink to='/'>Перейти</S.ListLink>
                         </S.CategoryListItem>
                     ))}
                 </S.CategoryList>
-                <S.AllCategoryBtn>Все категории</S.AllCategoryBtn>
+                <S.AllCategoryBtn to='/catalog'>Все категории</S.AllCategoryBtn>
             </Container>
         </S.CategoryWrapper>
     );

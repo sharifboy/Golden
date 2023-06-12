@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Swiper } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import axios from "axios";
 import { Navigation, Autoplay } from "swiper";
 import { breakpoints } from "./data";
@@ -13,6 +13,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 import { ArrowIcon } from "assets/images/svgIcons";
+import ProductCard from "components/ProductCard";
 
 const PopularProducts = () => {
     const [data, setData] = useState([]);
@@ -27,7 +28,7 @@ const PopularProducts = () => {
     const useSwiperRef = () => {
         const [wrapper, setWrapper] = useState(null);
         const ref = useRef(null);
-
+        console.log("hello");
         useEffect(() => {
             if (ref.current) {
                 setWrapper(ref.current);
@@ -44,7 +45,6 @@ const PopularProducts = () => {
         getData();
     }, []);
 
-    console.log(data);
     return (
         <S.PopularWrapper>
             <Container>
@@ -68,33 +68,20 @@ const PopularProducts = () => {
                         prevEl,
                         nextEl,
                     }}
-                    autoplay={true}
-                    loop={true}
                     breakpoints={breakpoints}
-                    modules={[Navigation, Autoplay]}
+                    modules={[Navigation]}
                     className='mySwiper'
                 >
                     {data?.map((el) => (
-                        <S.ProductCard key={el.id}>
-                            <S.ProductImageLink to='/'>
-                                <S.InCashTextBox>
-                                    <S.CashText>
-                                        {el.inCash
-                                            ? "В наличии"
-                                            : "Нет в наличии"}
-                                    </S.CashText>
-                                </S.InCashTextBox>
-                                <S.SaleBox>Sale</S.SaleBox>
-                                <S.ProductImage src={el.image} />
-                            </S.ProductImageLink>
-                            <S.ProductCardInfo>
-                                <S.InfoTitle>{el.name}</S.InfoTitle>
-                                <S.PriceBoard>
-                                    <S.MainPrice>{el.currentPrice}</S.MainPrice>
-                                    <S.OldPrice>{el.oldPrice}</S.OldPrice>
-                                </S.PriceBoard>
-                            </S.ProductCardInfo>
-                        </S.ProductCard>
+                        <SwiperSlide key={el.id}>
+                            <ProductCard
+                                inCash={el.inCash}
+                                image={el.image}
+                                name={el.name}
+                                oldPrice={el.oldPrice}
+                                currentPrice={el.currentPrice}
+                            />
+                        </SwiperSlide>
                     ))}
                 </Swiper>
             </Container>

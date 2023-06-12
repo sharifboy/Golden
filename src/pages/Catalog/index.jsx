@@ -7,6 +7,7 @@ import { Container } from "components/Container/style";
 import { Title } from "components/WhyUs/style";
 import { AllCategoryBtn } from "components/CategoryList/style";
 import Footer from "components/Footer";
+import BreadCrumbs from "components/BreadCrumbs";
 import * as S from "./style";
 
 const Catalog = () => {
@@ -14,12 +15,7 @@ const Catalog = () => {
         <S.CatalogWrapper>
             <Header />
             <Container>
-                <S.CatalogBreadCrumbs aria-label='breadcrumb'>
-                    <Link underline='hover' color='inherit' to='/'>
-                        Главная
-                    </Link>
-                    <S.CurrentPageLink>Каталог</S.CurrentPageLink>
-                </S.CatalogBreadCrumbs>
+                <BreadCrumbs disableText={"Каталог"} />
                 <S.CatalogContent>
                     <Title>Категории</Title>
                     <S.CatalogList>

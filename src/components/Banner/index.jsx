@@ -1,6 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import { Swiper } from "swiper/react";
 import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
+import { useSwiperRef } from "hooks/useSwiperRef";
 import { swiperElementData } from "./data";
 import Button from "components/Button";
 import { Container } from "components/Container/style";
@@ -13,19 +14,6 @@ import "swiper/css/pagination";
 import { ArrowIcon } from "assets/images/svgIcons";
 
 const Banner = () => {
-    const useSwiperRef = () => {
-        const [wrapper, setWrapper] = useState(null);
-        const ref = useRef(null);
-
-        useEffect(() => {
-            if (ref.current) {
-                setWrapper(ref.current);
-            }
-        }, []);
-
-        return [wrapper, ref];
-    };
-
     const [nextEl, nextElRef] = useSwiperRef();
     const [prevEl, prevElRef] = useSwiperRef();
     return (

@@ -9,6 +9,11 @@ import BreadCrumbs from "components/BreadCrumbs";
 import Footer from "components/Footer";
 import PopularProducts from "components/PopularProducts";
 import ContactForm from "components/ContactForm";
+import InfoColumns from "components/BreadCrumbs/InfoColumns";
+import {
+    infoData,
+    infoSecondData,
+} from "components/BreadCrumbs/InfoColumns/data";
 
 const Category = () => {
     const { type } = useParams();
@@ -47,6 +52,8 @@ const Category = () => {
                 </CategoryListWrapper>
             </Container>
             <PopularProducts />
+            <InfoColumns data={infoData} />
+            <InfoColumns data={infoSecondData} reverse={true} />
             <ContactForm />
             <Footer />
         </>

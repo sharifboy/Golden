@@ -12,12 +12,18 @@ const Content = styled.div`
     ${Flex.flexBetween};
     flex-direction: ${({ reverse }) => (reverse ? "row-reverse" : "row")};
     gap: 30px;
+
+    @media (max-width: 820px) {
+        flex-direction: column;
+        align-items: center;
+    }
 `;
 
 const InfoContent = styled.div`
     ${Flex.justFlex};
     justify-content: center;
     flex-direction: column;
+    flex-basis: 100%;
     gap: 24px;
 `;
 
@@ -36,11 +42,40 @@ const ContentText = styled.p`
 const ImageWrapper = styled.div`
     width: 100%;
     overflow: hidden;
-    background-color: aliceblue;
+
+    @media (max-width: 820px) {
+        width: 80%;
+    }
+
+    @media (max-width: 576px) {
+        width: 100%;
+    }
 `;
 
 const ContentImage = styled.img`
     display: block;
+    width: 100%;
+    object-fit: contain;
+`;
+
+const List = styled.div`
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 12px;
+    flex-wrap: wrap;
+
+    @media (max-width: 820px) {
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 8px;
+    }
+`;
+
+const ListItems = styled.p`
+    ${Flex.alignCenter}
+    gap: 12px;
+    ${adaptiveValue("font-size", 20, 16)}
+    ${adaptiveValue("line-height", 24, 26)}
 `;
 
 export {
@@ -51,4 +86,6 @@ export {
     InfoContent,
     ImageWrapper,
     ContentImage,
+    List,
+    ListItems,
 };

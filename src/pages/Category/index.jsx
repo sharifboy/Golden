@@ -44,6 +44,7 @@ const Category = () => {
                             inCash={el.inCash}
                             name={el.name}
                             oldPrice={el.oldPrice}
+                            id={el.id}
                         />
                     ))}
                 </CategoryListWrapper>

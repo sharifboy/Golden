@@ -29,11 +29,13 @@ const catalogListData = [
         id: 3,
         image: image_4,
         text: "Замки для дома",
+        type: "forWork",
     },
     {
         id: 4,
         image: image_5,
         text: "Замки для отелей",
+        type: "forOffice",
     },
     {
         id: 5,
@@ -44,11 +46,13 @@ const catalogListData = [
         id: 6,
         image: image_7,
         text: "Замки для шкафчиков",
+        type: "forFlat",
     },
     {
         id: 7,
         image: image_1,
         text: "Замки для раздевалок",
+        type: "forWork",
     },
 ];
 

@@ -41,18 +41,19 @@ const catalogListData = [
         id: 5,
         image: image_6,
         text: "Замки для офиса",
+        type: "forFlat",
     },
     {
         id: 6,
         image: image_7,
         text: "Замки для шкафчиков",
-        type: "forFlat",
+        type: "forWork",
     },
     {
         id: 7,
         image: image_1,
         text: "Замки для раздевалок",
-        type: "forWork",
+        type: "forOffice",
     },
 ];
 

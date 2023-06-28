@@ -14,7 +14,7 @@ import {
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { RateText, RateTextInfo } from "components/ProductCard/style";
 
-const ProductInfo = ({ name, oldPrice, currentPrice, id, inCash }) => {
+const ProductInfo = ({ name, oldPrice, currentPrice, }) => {
     return (
         <S.ProductInfoWrapper>
             <RateText>

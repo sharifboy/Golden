@@ -8,21 +8,25 @@ const categoryListData = [
         id: 0,
         image: image,
         title: "Для отелей",
+        type: "forWork",
     },
     {
         id: 1,
         image: image_2,
         title: "Для шкафчиков",
+        type: "forOffice",
     },
     {
         id: 2,
         image: image_3,
         title: "Для офисов",
+        type: "forFlat",
     },
     {
         id: 3,
         image: image_4,
         title: "Замки для дома",
+        type: "forWork",
     },
 ];
 

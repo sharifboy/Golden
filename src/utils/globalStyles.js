@@ -1,9 +1,9 @@
 import { createGlobalStyle } from "styled-components";
-import { Colors, Flex } from ".";
+import { Colors, Flex } from "./index";
 import { adaptiveValue } from "./variable";
 
 export const GlobalStyles = createGlobalStyle`
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Rubik:wght@400;500;600;700&display=swap');
+
     *{
         padding: 0;
         margin: 0;

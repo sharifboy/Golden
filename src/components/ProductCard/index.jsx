@@ -1,5 +1,6 @@
 import React from "react";
 import * as S from "./style";
+import Rate from "components/Rate";
 
 const ProductCard = ({ inCash, image, name, currentPrice, oldPrice, id }) => {
     return (
@@ -14,6 +15,10 @@ const ProductCard = ({ inCash, image, name, currentPrice, oldPrice, id }) => {
                 <S.ProductImage src={image} />
             </S.ProductImageLink>
             <S.ProductCardInfo>
+                <S.RateText>
+                    <Rate />
+                    <S.RateTextInfo>(12) отзывов</S.RateTextInfo>
+                </S.RateText>
                 <S.InfoTitle>{name}</S.InfoTitle>
                 <S.PriceBoard>
                     <S.MainPrice>{currentPrice}</S.MainPrice>

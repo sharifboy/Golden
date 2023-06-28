@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { SwiperSlide } from "swiper/react";
 import { Colors, Flex } from "utils/index";
 
 const ProductCardWrapper = styled.div`
@@ -89,6 +88,17 @@ const CashText = styled.span`
     color: ${Colors.gray};
 `;
 
+const RateText = styled.div`
+    ${Flex.alignCenter};
+    justify-content: space-between;
+    width: 250px;
+`;
+
+const RateTextInfo = styled.p`
+    font-size: 14px;
+    color: ${Colors.gray};
+`;
+
 export {
     CashText,
     InCashTextBox,
@@ -101,4 +111,6 @@ export {
     ProductImage,
     ProductImageLink,
     SaleBox,
+    RateText,
+    RateTextInfo,
 };

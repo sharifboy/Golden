@@ -1,15 +1,18 @@
-import { Action } from "@remix-run/router";
 import { ADD_TO_CART, REMOVE_FROM_CART } from "./types";
 
-const mainReducer = ({ children }) => {
-    switch (Action.type) {
+const mainReducer = (state, action) => {
+    switch (action.type) {
         case ADD_TO_CART:
-            return "hii";
+            return {
+                ...state,
+                cartItems: [...state.cartItems, action.payloady],
+            };
         case REMOVE_FROM_CART:
             return "hello";
+
         default:
             return "hii";
     }
-}
+};
 
 export default mainReducer;

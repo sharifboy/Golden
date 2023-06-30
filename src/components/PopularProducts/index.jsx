@@ -62,15 +62,7 @@ const PopularProducts = () => {
                 >
                     {data?.map((el) => (
                         <SwiperSlide key={el.id}>
-                            <ProductCard
-                                inCash={el.inCash}
-                                image={el.image}
-                                name={el.name}
-                                oldPrice={el.oldPrice}
-                                currentPrice={el.currentPrice}
-                                id={el.id}
-                                mark={el?.mark}
-                            />
+                            <ProductCard data={el} />
                         </SwiperSlide>
                     ))}
                 </Swiper>

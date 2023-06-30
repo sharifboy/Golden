@@ -10,7 +10,7 @@ const CartState = ({ children }) => {
 
     const [state, dispatch] = useReducer(mainReducer, initialState);
     
-    const addToCart = (el) => dispatch({ type: ADD_TO_CART, payload: el });
+    const addToCart = (el) => dispatch({ type: ADD_TO_CART, payload: el } );
 
     const removeFromCart = (id) => dispatch({ type: REMOVE_FROM_CART, payload: id });
 

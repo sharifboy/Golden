@@ -10,6 +10,7 @@ import like from "assets/images/like.png";
 
 const Header = () => {
     const [burger, setBurger] = useState(false);
+    const [cartModal, setCartModal] = useState(false);
 
     const handleClick = () => {
         setBurger(!burger);
@@ -54,9 +55,11 @@ const Header = () => {
                                 <Link to='/'>
                                     <img src={like} alt='like' />
                                 </Link>
-                                <Link to='/cart'>
-                                    <CartIcon />
-                                </Link>
+                                <button>
+                                    <CartIcon
+                                        onClick={() => setCartModal(!cartModal)}
+                                    />
+                                </button>
                             </Style.ActionBox>
                         </Style.UserActions>
                     </Style.HeaderNavContent>

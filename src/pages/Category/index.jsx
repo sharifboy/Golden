@@ -37,15 +37,7 @@ const Category = () => {
                 <BreadCrumbs disableText={"Каталог"} />
                 <CategoryListWrapper>
                     {data?.map((el) => (
-                        <ProductCard
-                            key={el.id}
-                            currentPrice={el.currentPrice}
-                            image={el.image}
-                            inCash={el.inCash}
-                            name={el.name}
-                            oldPrice={el.oldPrice}
-                            id={el.id}
-                        />
+                        <ProductCard key={el.id} data={el} />
                     ))}
                 </CategoryListWrapper>
             </Container>

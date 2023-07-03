@@ -52,8 +52,10 @@ export const GlobalStyles = createGlobalStyle`
     .swiper-pagination-bullet::after{
         content: "";
         position: absolute;
-        top: -8px;
-        left: -8.4px;
+        top: -8.5px;
+        left: -8.5px;
+        right: -8.5px;
+        bottom: -8.5px;
         width: 24px;
         height: 24px;
         border-radius: 50%;
@@ -88,5 +90,9 @@ export const GlobalStyles = createGlobalStyle`
       ${adaptiveValue("font-size", 14, 12)}
     }
 
+    button {
+        background-color: transparent;
+        cursor: pointer;
+    }
     
 `;

@@ -5,10 +5,15 @@ const mainReducer = (state, action) => {
         case ADD_TO_CART:
             return {
                 ...state,
-                cartItems: [...state.cartItems, action.payloady],
+                cartItems: [...state.cartItems, action.payload],
             };
         case REMOVE_FROM_CART:
-            return "hello";
+            return {
+                ...state,
+                cartItems: state.cartItems.filter(
+                    (el) => el.id !== action.payload
+                ),
+            };
 
         default:
             return "hii";

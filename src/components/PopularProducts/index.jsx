@@ -15,11 +15,11 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 import { ArrowIcon } from "assets/images/svgIcons";
-import MainContext from "reducer/CartContext";
+import MainContext from "context/CartContext";
 
 const PopularProducts = () => {
     const [data, setData] = useState([]);
-    const { cartItems } = useContext(MainContext);
+    const { cartItems, likeItems } = useContext(MainContext);
 
     async function getData() {
         const res = await axios.get(`${process.env.REACT_APP_MAIN_URL}`);
@@ -62,11 +62,14 @@ const PopularProducts = () => {
                     modules={[Navigation]}
                     className='mySwiper'
                 >
-                    {data?.map((el) => (
+                    {data.map((el) => (
                         <SwiperSlide key={el.id}>
                             <ProductCard
                                 data={el}
                                 select={cartItems.find(
+                                    (item) => item.id == el.id
+                                )}
+                                like={likeItems.some(
                                     (item) => item.id == el.id
                                 )}
                             />

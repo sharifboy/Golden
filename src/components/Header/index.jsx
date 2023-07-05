@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useEffect, useState } from "react";
 import BurgerMenu from "./BurgerMenu";
 import HeaderTop from "./HeaderTop";
 import { Container } from "components/Container/style";
@@ -7,13 +6,29 @@ import * as Style from "./style";
 
 import { CartIcon, LogoIcon, PhoneLogo } from "assets/images/svgIcons";
 import like from "assets/images/like.png";
+import { Badge } from "@mui/material";
+import CartModal from "components/CartModal";
+import LikeModal from "components/LikeModal";
+import MainContext from "context/CartContext";
 
 const Header = () => {
     const [burger, setBurger] = useState(false);
     const [cartModal, setCartModal] = useState(false);
+    const [likeModal, setLikeModal] = useState(false);
+    const { cartItems, likeItems } = useContext(MainContext);
+    
+    console.log(likeItems);
 
     const handleClick = () => {
         setBurger(!burger);
+    };
+
+    const handleModal = () => {
+        setCartModal(!cartModal);
+    };
+
+    const handleLike = () => {
+        setLikeModal(!likeModal);
     };
 
     useEffect(() => {
@@ -52,17 +67,34 @@ const Header = () => {
                                 +7 (966) 55 88 499
                             </Style.PhoneContent>
                             <Style.ActionBox>
-                                <Link to='/'>
-                                    <img src={like} alt='like' />
-                                </Link>
-                                <button>
-                                    <CartIcon
-                                        onClick={() => setCartModal(!cartModal)}
-                                    />
-                                </button>
+                                <Badge
+                                    badgeContent={Number(likeItems.length)}
+                                    color='primary'
+                                >
+                                    <button onClick={handleLike}>
+                                        <img src={like} alt='' />
+                                    </button>
+                                </Badge>
+                                <Badge
+                                    badgeContent={Number(cartItems.length)}
+                                    color='primary'
+                                >
+                                    <button onClick={handleModal}>
+                                        <CartIcon />
+                                    </button>
+                                </Badge>
                             </Style.ActionBox>
                         </Style.UserActions>
                     </Style.HeaderNavContent>
+                    <CartModal
+                            cartModal={cartModal}
+                            handleModal={handleModal}
+                            data={cartItems}
+                        />
+                        <LikeModal
+                            likeModal={likeModal}
+                            handleLike={handleLike}
+                        />
                 </Container>
                 <BurgerMenu open={burger} handleClick={handleClick} />
             </Style.HeaderNavbar>

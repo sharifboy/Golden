@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { SwiperSlide } from "swiper/react";
 import { Colors, Flex } from "utils/index";
 
 const ProductCardWrapper = styled.div`
@@ -32,7 +33,8 @@ const InfoTitle = styled.h3`
 `;
 
 const PriceBoard = styled.div`
-    ${Flex.alignCenter}
+    width: 100%;
+    ${Flex.spaceBetween}
     gap: 12px;
     margin-top: 10px;
 `;
@@ -89,7 +91,7 @@ const CashText = styled.span`
 `;
 
 const RateText = styled.div`
-    ${Flex.alignCenter};
+    ${Flex.alignCenter}
     justify-content: space-between;
     width: 250px;
 `;
